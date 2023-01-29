@@ -1,13 +1,12 @@
 package me.admqueiroga.transportcontrols.playback
 
 import android.content.Context
-import android.net.Uri
 import android.view.KeyEvent
 import android.view.View
-import androidx.leanback.media.PlaybackBaseControlGlue
-import androidx.leanback.media.PlaybackGlue
 import androidx.leanback.media.PlaybackTransportControlGlue
-import androidx.leanback.widget.*
+import androidx.leanback.widget.Action
+import androidx.leanback.widget.ArrayObjectAdapter
+import androidx.leanback.widget.PlaybackControlsRow
 import me.admqueiroga.transportcontrols.Movie
 
 class BasicTransportControlGlue(
@@ -42,8 +41,10 @@ class BasicTransportControlGlue(
         }
         onUpdateProgress()
     }
+
     val currentMovie: Movie
         get() = playerAdapter.playlist[playerAdapter.playlistPosition]
+
     // Event when ready state for play changes.
     override fun onPreparedStateChanged() {
         super.onPreparedStateChanged()
