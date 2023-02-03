@@ -1,4 +1,9 @@
 <resources>
 
-    <style name="Theme.TransportControls" parent="@style/Theme.Leanback" />
+    <style name="Theme.TransportControls" parent="@style/Theme.Leanback" >
+        <!--    Timeout after controls first appear on screen    -->
+        <item name="playbackControlsAutoHideTimeout">3000</item>
+        <!--    Timeout after controls appear due to user interaction    -->
+        <item name="playbackControlsAutoHideTickleTimeout">5000</item>
+    </style>
 </resources>

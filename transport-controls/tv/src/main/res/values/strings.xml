@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">TransportControls</string>
     <string name="browse_title">Videos by Your Company</string>
+    <string name="playback_controls_my_list_add">Add to My List</string>
+    <string name="playback_controls_my_list_remove">Remove from My List</string>
 
     <!-- Error messages -->
 </resources>
