@@ -35,7 +35,9 @@ class AwesomeTransportControlGlue(
     private val previousAction = PlaybackControlsRow.SkipPreviousAction(context)
 
     // Secondary actions
-    private val thumbsUpAction = PlaybackControlsRow.ThumbsUpAction(context)
+    private val thumbsUpAction = PlaybackControlsRow.ThumbsUpAction(context).apply {
+        index = PlaybackControlsRow.ThumbsUpAction.INDEX_OUTLINE
+    }
     private val shuffleAction = PlaybackControlsRow.ShuffleAction(context)
     private val repeatAction = PlaybackControlsRow.RepeatAction(context)
     private val myListAction = MyListAction(context)
@@ -56,7 +58,6 @@ class AwesomeTransportControlGlue(
     }
 
     override fun onCreateSecondaryActions(secondaryActionsAdapter: ArrayObjectAdapter) {
-        thumbsUpAction.index = PlaybackControlsRow.ThumbsUpAction.INDEX_OUTLINE
         secondaryActionsAdapter.add(thumbsUpAction)
         secondaryActionsAdapter.add(shuffleAction)
         secondaryActionsAdapter.add(repeatAction)
@@ -146,17 +147,20 @@ class AwesomeTransportControlGlue(
         if (movie != null) {
             title = movie.title
             subtitle = movie.description
-            Glide.with(context).asBitmap().load(movie.cardImageUrl).into(object : CustomTarget<Bitmap>() {
-                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
-                    controlsRow.setImageBitmap(context, resource)
-                    host.notifyPlaybackRowChanged()
-                }
+            Glide.with(context)
+                .asBitmap()
+                .load(movie.cardImageUrl)
+                .into(object : CustomTarget<Bitmap>() {
+                    override fun onResourceReady(bitmap: Bitmap, t: Transition<in Bitmap>?) {
+                        controlsRow.setImageBitmap(context, bitmap)
+                        host.notifyPlaybackRowChanged()
+                    }
 
-                override fun onLoadCleared(placeholder: Drawable?) {
-                    controlsRow.setImageBitmap(context, null)
-                    host.notifyPlaybackRowChanged()
-                }
-            })
+                    override fun onLoadCleared(placeholder: Drawable?) {
+                        controlsRow.setImageBitmap(context, null)
+                        host.notifyPlaybackRowChanged()
+                    }
+                })
             val secondaryActionsAdapter = controlsRow.secondaryActionsAdapter as ArrayObjectAdapter
             myListAction.index = when (MyList.contains(movie)) {
                 true -> MyListAction.INDEX_REMOVE
