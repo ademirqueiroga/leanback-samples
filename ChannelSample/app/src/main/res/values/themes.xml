@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.ChannelSample" parent="@style/Theme.Leanback" />
+</resources>
