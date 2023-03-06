@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_browse_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:deviceIds="tv"
+    android:orientation="vertical"
+    tools:ignore="MergeRootFrame">
+
+<!--    <androidx.leanback.tab.LeanbackTabLayout-->
+<!--        android:id="@+id/tabLayout"-->
+<!--        android:theme="@style/Theme.AppCompat"-->
+<!--        android:background="#f0f"-->
+<!--        app:tabMode="scrollable"-->
+<!--        app:tabGravity="fill"-->
+<!--        app:tabPaddingStart="32dp"-->
+<!--        app:tabPaddingEnd="32dp"-->
+<!--        app:tabIndicatorGravity="bottom"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
+<!--    <androidx.leanback.tab.LeanbackViewPager-->
+<!--        android:id="@+id/pager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+
+<!--    </androidx.leanback.tab.LeanbackViewPager>-->
+
+</androidx.appcompat.widget.LinearLayoutCompat>
