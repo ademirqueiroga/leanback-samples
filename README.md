@@ -2,6 +2,8 @@
 
 This repository contains Android TV sample projects on various different topics.
 
+[Medium List on Android TV development](https://admqueiroga.medium.com/list/android-tv-leanback-guide-9a363e566f38)
+
 ## [MediaSession](https://github.com/ademirqueiroga/leanback-samples/tree/main/MediaSession)
 
 📝 [Check blog post here](https://medium.com/proandroiddev/enhancing-android-tv-playback-experience-with-mediasession-f1554ceae2f1)
